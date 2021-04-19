@@ -21,6 +21,7 @@ var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware'
 
 const AWS = require('aws-sdk')
 const { v4: uuid } = require('uuid')
+
 /* Cognito SDK */
 const cognito = new
 AWS.CognitoIdentityServiceProvider({
@@ -52,6 +53,7 @@ app.use(function(req, res, next) {
 });
 
 
+//getGroupsForUser
 async function getGroupsForUser(event) {
   let userSub =
     event
@@ -87,6 +89,7 @@ async function canPerformAction(event, group) {
     }
   })
 }
+
 
 /**********************
  * Example get method *
